@@ -26,3 +26,28 @@ def solution(clothes):
 ```
 
 => 일부 항목 시간복합도 문제 발생
+
+서로 다른 옷의 조합의 수 = (각 종류별 옷의 개수 + 1)을 전부 곱한 값에 - 1(아무것도 입지 않은 경우)
+
+모든 주합을 구하지 않더라도 각 옷의 개수만 알면 됨
+```
+def solution(clothes):
+    kind = []
+    for i in clothes:
+        kind.append(i[1])
+    kind.sort()
+    temp = kind[0]
+    count = 0
+    result = 1
+
+    for name in kind:
+        if name == temp:
+            count = count + 1
+        else:
+            result = result * (count + 1)
+            count = 1
+            temp = name
+            print("temp:", temp)
+    result = result * (count + 1)
+    return result - 1
+```
