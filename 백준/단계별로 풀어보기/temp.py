@@ -1,5 +1,8 @@
-T = int(input())
-for i in range(T):
-    A, B = list(map(int, input().split()))
-print(A)
-print(B)
+import sys
+
+while True:
+    try:
+        A, B = map(int, sys.stdin.readline().split())
+        print(A + B)
+    except:
+        break
