@@ -32,8 +32,17 @@ print(sum)
 #10809 알파벳 찾기
 
 #2675 문자열 반복
+T = int(input())
+for i in range(T):
+    R, S = input().split()
+    R = int(R)
+    for  str in S:
+        print(str * R, end = "")
+    print("")
 
 #1152 단어의 개수
+S = list(input().split())
+print(len(S))
 
 #2908 상수
 
