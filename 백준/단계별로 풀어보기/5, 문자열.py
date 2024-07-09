@@ -45,7 +45,18 @@ S = list(input().split())
 print(len(S))
 
 #2908 상수
-
+A, B = input().split()
+A_r = ''
+B_r = ''
+for i in A:
+    A_r = i + A_r
+for i in B:
+    B_r = i + B_r
+if int(A_r) > int(B_r):
+    print(A_r)
+else:
+    print(B_r)
+    
 #5622 다이얼
 
 #11718 그대로 출력하기
