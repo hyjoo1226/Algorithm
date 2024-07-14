@@ -1,5 +1,4 @@
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PjKXKALcDFAUq
-#예외처리 해야함
 
 a, b = input().split()
 if a == b:

@@ -1,11 +1,15 @@
-A, B = input().split()
-A_r = ''
-B_r = ''
-for i in A:
-    A_r = i + A_r
-for i in B:
-    B_r = i + B_r
-if int(A_r) > int(B_r):
-    print(A_r)
-else:
-    print(B_r)
+S = input()
+alpha = list(range(26))
+temp = 'a'
+count = 0
+
+for i in alpha:
+    alpha[i] = -1
+for str in S:
+    if alpha[ord(str) - ord(temp)] != -1:
+        pass
+    else:
+        alpha[ord(str) - ord(temp)] = count
+    count += 1
+for i in alpha:
+    print(i, end = " ")

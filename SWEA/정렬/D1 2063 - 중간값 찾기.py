@@ -1,5 +1,4 @@
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5QPsXKA2UDFAUq
-# 입력값 예외처리 해야함
 # 문자열을 정수형으로 새 리스트 만들기: N_list = [int(i) for i in temp]
 
 N = input()

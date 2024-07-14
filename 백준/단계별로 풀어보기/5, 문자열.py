@@ -30,6 +30,21 @@ for i in S:
 print(sum)
 
 #10809 알파벳 찾기
+S = input()
+alpha = list(range(26))
+temp = 'a'
+count = 0
+
+for i in alpha:
+    alpha[i] = -1
+for str in S:
+    if alpha[ord(str) - ord(temp)] != -1:
+        pass
+    else:
+        alpha[ord(str) - ord(temp)] = count
+    count += 1
+for i in alpha:
+    print(i, end = " ")
 
 #2675 문자열 반복
 T = int(input())
@@ -58,5 +73,37 @@ else:
     print(B_r)
     
 #5622 다이얼
+#모든 범위를 다 직접 입력한거라 더 이쁜 코드가 없을까 아쉬움
+S = input()
+num = 0
+sum = 0
+
+for str in S:
+    if str >= 'A' and str <= 'C':
+        num = 2
+    elif str >= 'D' and str <= 'F':
+        num = 3
+    elif str >= 'G' and str <= 'I':
+        num = 4
+    elif str >= 'J' and str <= 'L':
+        num = 5
+    elif str >= 'M' and str <= 'O':
+        num = 6
+    elif str >= 'P' and str <= 'S':
+        num = 7
+    elif str >= 'T' and str <= 'V':
+        num = 8
+    elif str >= 'W' and str <= 'Z':
+        num = 9
+    else:
+        num = 1 
+    sum += num  
+print(len(S) + sum)
 
 #11718 그대로 출력하기
+#입력값이 없을때 - EOF Error(End of File Error)
+while True:
+    try:
+        print(input())
+    except:
+        break
