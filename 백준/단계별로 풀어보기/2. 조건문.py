@@ -75,7 +75,7 @@ if hour >= 24:
 print(hour, minute)
 
 #2480 주사위 세개
-# a = list(map(int, input().split()) 입력값 정수형 리스트로 받기
+# a = list(map(int, input().split())) 입력값 정수형 리스트로 받기
 
 dice = list(map(int, input().split()))
 dice.sort()
