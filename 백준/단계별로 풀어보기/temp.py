@@ -1,7 +1,24 @@
-#별 뒤쪽은 출력 없음
-N = int(input())
-for i in range(2 * N - 1):
-    if i < N:
-        print(' ' * (N - i - 1) + '*' * (2 * i + 1))
-    else:
-        print(' ' * (i - N + 1) + '*' * (4 * N - 2 * i - 3))
+N, M = map(int, input().split())
+A = []
+B = []
+C = []
+
+for i in range(N):
+    A.append(input().split())
+for i in range(N):
+    B.append(input().split())
+
+for i in range(len(A)):
+    temp = []
+    for j in range(len(B)):
+        temp.append(int(A[i][j]) + int(B[i][j]))
+    C.append(temp)
+
+
+for i in C:
+    for j in range(len(i)):
+        if j == len(i) - 1:
+            print(i[j])
+        else:
+            print(i[j], end=' ')
+    print()
