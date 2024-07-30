@@ -1,29 +1,17 @@
-def height_result(height, temp, i, n):
-    if height[i] - height[i + n] > 0:
-        if temp == 0:
-            temp = height[i] - height[i + n]
-        if temp > height[i] - height[i + n]:
-            temp = height[i] - height[i + n]
-        return temp
-    else:
-        return 0
-
-for test_case in range(10):
-    N = int(input())
-    height = list(map(int, input().split()))
-    height_lst = []
+for test_case in range(1, 11):
+    N = int(input())    #건물의 개수
+    height_lst = list(map(int, input().split()))    #건물의 높이
+    view = 0
+    result = 0
 
     for i in range(N):
-        if (i > 1) and (i < (N - 2)):
-            temp = 0
+        if (i > 1) and (i < (N - 2)):   #양 옆 2건물보다 크다면
+            if ((height_lst[i] > height_lst[i - 2]) and (height_lst[i] > height_lst[i - 1]) and (height_lst[i] > height_lst[i + 1]) and (height_lst[i] > height_lst[i + 2])):
+                highest = height_lst[i - 2]     #양 옆 2건물 중 가장 높은 높이
+                for x in [-1, 1, 2]:
+                    if highest < height_lst[i + x]:
+                        highest = height_lst[i + x]
+                view = height_lst[i] - highest     #해당 건물의 조망권 확보된 세대수
+                result += view
 
-            for n in [-2, -1, 1, 2]:
-                temp = height_result(height, temp, i, n)
-            # print(temp)
-            height_lst.append(temp)
-    print(height_lst)
-    height_sum = 0
-    for number in height_lst:
-        height_sum += number
-
-    print(f'#{test_case} {height_sum}')
+    print(f'#{test_case} {result}')
