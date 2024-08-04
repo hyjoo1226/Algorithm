@@ -9,7 +9,18 @@ for test_case in range(1 , T + 1):
     for item in box_lst:
         if highest_box < item:
             highest_box = item
-    
-    for i in range(highest_box):    #회전했을 때 가장 긴 가로값까지 순회
+
+    arr = [[0] * highest_box for _ in range(9)]  #배열 0으로 초기화 후 매핑
+    for i in range(9):
+        for j in range(highest_box):
+            if j <= box_lst[i - 1]:
+                arr[i][j] = 1
+
+    for i in range(9):
+        for j in range(highest_box):
+            if j <= box_lst[i - 1]:
+                for i in range(1, 9):
+                arr[i][j]
+
         
 

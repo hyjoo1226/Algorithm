@@ -28,3 +28,9 @@ for test_case in range(1, T + 1):
         for i in range(10):
             for j in range(i0)
 
+n = len(arr)
+for i in range(1 << n):
+    for j in range(n):
+        if i & (1 << j):
+            print
+
