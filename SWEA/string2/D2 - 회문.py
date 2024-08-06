@@ -9,6 +9,10 @@ for tc in range(1, T + 1):
             arr[i][j] = temp[j]
 
     result = []
+    j_index = N - M
+    if j_index > N // 2 - 1:
+        j_index = N // 2 - 1
+
     for i in range(N):  #가로 회문 찾기
         token = 0   #break위한 변수
 
