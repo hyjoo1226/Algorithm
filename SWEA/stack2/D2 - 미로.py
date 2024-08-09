@@ -1,5 +1,14 @@
 from pprint import pprint
 
+"""
+5
+13001
+10100
+11000
+11110
+10020
+"""
+
 def search_stack(N, arr, stack):
     if len(stack) == 0:  # 스택이 비었다면(미로 탈출x). return 0
         return 0
@@ -9,7 +18,7 @@ def search_stack(N, arr, stack):
     dj = [0, 0, -1, 1]
 
     for k in range(4):  # 현재 위치에서 델타좌표(상하좌우)를 갔을 때
-        if (0 <= current[0] + di[k] < N) and (0 <= current[1] + dj[k] < N): #인덱스 범위내에서
+        if (0 <= current[0] + di[k] < N) and (0 <= current[1] + dj[k] < N) and (arr[current[0] + di[k]][current[1] + dj[k]] != 1): #인덱스 범위내에서
             if arr[current[0] + di[k]][current[1] + dj[k]] == '3':   #3이면 목적지. return 1
                 return 1
             if arr[current[0] + di[k]][current[1] + dj[k]] == '0':   #0이면 해당 좌표 스택에 추가
@@ -22,7 +31,7 @@ for tc in range(1, T + 1):
     N = int(input())    #NxN배열 초기화
     arr = [[0] * N for _ in range(N)]
     for i in range(N):
-        temp = input()
+        temp = input().strip()
         for j in range(N):
             arr[i][j] = temp[j]
 
