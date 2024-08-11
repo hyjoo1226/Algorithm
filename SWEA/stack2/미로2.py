@@ -7,17 +7,16 @@ for dx, dy in [(-1, 0),(1, 0),(0, -1),(0, 1)]:
 def search(x, y):
     stack = [(x, y)]
     visited[x][y] = 1
-    #언제까지 탐색을 할건가요?
     while stack:
         x, y = stack.pop()
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-            #미로의 범위를 벗어나지 않는지 &&
-            if 0 <= nx < N and 0 <= ny < N and maze[nx][ny] != 1 and visited[nx][y] != 1:
-                if maze[nx][ny] == 3:   #다음 위치가 출구임
+        for k in range(4):
+            nx = x + dx[k]
+            ny = y + dy[k]
+            #미로의 범위를 벗어나지 않고, 벽이 아니고, 처음 방문하는 곳인 경우
+            if 0 <= nx < N and 0 <= ny < N and maze[nx][ny] != 1 and visited[nx][ny] != 1:
+                if maze[nx][ny] == 3:   #출구 도착
                     return 1    #1 반환 후 함수 종료
-                #3이 아니라면,
+                #3이 아니라면 스택에 추가, 방문체크
                 stack.append((nx, ny))
                 visited[nx][ny] = 1
     return 0
@@ -26,7 +25,7 @@ T = int(input())
 for tc in range(1, T + 1):
     N = int(input())
 
-    maze = [list(map(int, input())) for _ in range(N)]
+    maze = [list(map(int, input().strip())) for _ in range(N)]
     visited = [[0] * N for _ in range(N)]
 
     # 2가 담긴 곳 == 출발점
