@@ -40,3 +40,10 @@ for i in range(N - 1, check_idx - 1, -1):
             area += (pos_lst[i] - pos_lst[i - 1]) * max_height
 
 print(area)
+#반례 최고높이건물 붙어있는경우
+# 5
+# 1 5
+# 2 1
+# 3 1
+# 4 1
+# 5 5
