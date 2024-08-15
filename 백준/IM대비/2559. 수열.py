@@ -1,11 +1,21 @@
 N, K = map(int, input().split())    #전체 날짜 수 N, 연속적인 날짜 수 K
 tem_lst = list(map(int, input().split()))   #온도 리스트
 max_sum = -9999    #온도 최댓값
-for i in range(N - K - 2):
-    sum = 0
-    for j in range(K):
-        sum += tem_lst[i + j]
-    print(sum)
-    if max_sum < sum:
-        max_sum = sum
-print(max_sum)
+
+arr = [tem_lst[0]] * N #누적합 저장할 배열
+sum = 0 #첫 누적합
+for i in range(K):
+    sum += tem_lst[i]
+arr[K - 1] = sum
+for i in range(K, len(tem_lst)):    #누적합 저장
+    arr[i] = arr[i - 1] + tem_lst[i]
+
+print(arr)
+#시간초과(시간복잡도: O^2)
+# for i in range(N - K + 1):
+#     sum = 0
+#     for j in range(K):
+#         sum += tem_lst[i + j]
+#     if max_sum < sum:
+#         max_sum = sum
+# print(max_sum)
