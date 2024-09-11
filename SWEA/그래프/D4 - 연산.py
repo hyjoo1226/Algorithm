@@ -39,6 +39,47 @@ for t in range(1, T + 1):
 
     print(f'#{t} {answer}')
 
+# from collections import deque
+#
+#
+# def calculate(type, num):
+#     if type == 0:
+#         return num + 1
+#     elif type == 1:
+#         return num - 1
+#     elif type == 2:
+#         return num * 2
+#     else:
+#         return num - 10
+#
+#
+# def min_cal(num, target):
+#     visited = [0] * 1000003
+#     q = deque()
+#     q.append((num, 0))
+#     visited[num] = 1
+#
+#     while q:
+#         curr, level = q.popleft()
+#         if curr == target:
+#             return level
+#         for i in range(4):
+#             tmp = calculate(i, curr)
+#             if (tmp <= 1000000 or tmp >= -1) and not visited[tmp]:
+#                 q.append((tmp, level + 1))
+#                 visited[tmp + 1] = 1
+#
+#
+# T = int(input())
+#
+# for t in range(1, T + 1):
+#     # N: 현재 숫자, M: 만들고자 하는 숫자
+#     N, M = map(int, input().split())
+#
+#     answer = min_cal(N, M)
+#
+#     print(f'#{t} {answer}')
+
 # T = int(input())
 # for tc in range(1, T + 1):
 #     N, M = map(int, input().split())    #시작 N, 끝 M
