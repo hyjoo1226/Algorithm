@@ -1,0 +1,7 @@
+h, w = map(int, input().split())
+
+b = (10000 * w) / (h * h)
+
+print(int(b))
+if int(b) >= 25:
+    print("Obesity")
